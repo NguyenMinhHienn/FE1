@@ -1,0 +1,83 @@
+<div class="bg-white p-3 rounded-lg shadow-lg w-full">
+  <h2 class="text-2xl font-semibold mb-4 text-center">Chỉnh Sửa Sản Phẩm</h2>
+  <form 
+    #myForm="ngForm"
+    (ngSubmit)="updateProduct()">
+    <!-- Tên sản phẩm -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Tên sản phẩm</label>
+      <input type="text" 
+        name="name"
+        [(ngModel)]="product.name"
+        required
+        class="w-full p-2 border border-gray-300 rounded-lg">
+    </div>
+
+    <!-- Giá bán -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Giá bán</label>
+      <input type="number" 
+        name="price"
+        [(ngModel)]="product.price"
+        required
+        class="w-full p-2 border border-gray-300 rounded-lg">
+    </div>
+
+    <!-- Hình ảnh -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Hình ảnh</label>
+      <input type="text" 
+        name="image"
+        [(ngModel)]="product.image"
+        class="w-full p-2 border border-gray-300 rounded-lg">
+    </div>
+
+    <!-- Danh mục -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Danh mục</label>
+      <select name="category"
+        [(ngModel)]="product.category" 
+        class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300">
+        <option value="Mobile">Điện thoại</option>
+        <option value="Laptop">Máy tính</option>
+        <option value="PK">Phụ kiện</option>
+      </select>
+    </div>
+
+    <!-- Trạng thái -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Trạng thái</label>
+      <div class="flex gap-4">
+        <label class="flex items-center">
+          <input type="radio" 
+            name="status" 
+            [value]="true"
+            [(ngModel)]="product.status"
+            class="mr-2"> 
+          Còn hàng
+        </label>
+        <label class="flex items-center">
+          <input type="radio" 
+            name="status" 
+            [value]="false"
+            [(ngModel)]="product.status"
+            class="mr-2"> 
+          Hết hàng
+        </label>
+      </div>
+    </div>
+
+    <!-- Mô tả -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Mô tả</label>
+      <textarea name="description"
+        [(ngModel)]="product.description"
+        class="w-full p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"></textarea>
+    </div>
+
+    <!-- Nút cập nhật -->
+    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+      Cập nhật sản phẩm
+    </button>
+  </form>
+</div>

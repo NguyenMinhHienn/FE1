@@ -1,0 +1,188 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop Dell XPS 13",
+      "price": 1200,
+      "sale_price": 999,
+      "status": false,
+      "image": "https://picsum.photos/200/300",
+      "category": "Laptop",
+      "rating": 4.5,
+      "description": "Sản phẩm chất lượng cao, đáng mua."
+    },
+    {
+      "id": "2",
+      "name": "MacBook Air M2",
+      "price": 1300,
+      "sale_price": 1150,
+      "status": true,
+      "image": "https://picsum.photos/200/300",
+      "category": "Laptop",
+      "rating": 4.8,
+      "description": "Thiết kế hiện đại, hiệu năng vượt trội."
+    },
+    {
+      "id": "3",
+      "name": "Samsung Galaxy S23",
+      "price": 1000,
+      "sale_price": 899,
+      "status": false,
+      "image": "https://picsum.photos/200/300",
+      "category": "Điện thoại",
+      "rating": 4.6,
+      "description": "Đáp ứng mọi nhu cầu sử dụng hàng ngày."
+    },
+    {
+      "id": "4",
+      "name": "iPhone 14 Pro",
+      "price": 1200,
+      "sale_price": 1100,
+      "status": true,
+      "image": "https://picsum.photos/200/300",
+      "category": "Điện thoại",
+      "rating": 4.9,
+      "description": "Giá cả hợp lý, phù hợp với mọi đối tượng."
+    },
+    {
+      "id": "5",
+      "name": "Sony WH-1000XM5",
+      "price": 400,
+      "sale_price": 349,
+      "status": true,
+      "image": "https://picsum.photos/200/300",
+      "category": "Âm thanh",
+      "rating": 4.7,
+      "description": "Công nghệ tiên tiến, trải nghiệm tuyệt vời."
+    },
+    {
+      "id": "6",
+      "name": "Bose SoundLink Revolve+",
+      "price": 299,
+      "sale_price": 249,
+      "status": false,
+      "image": "https://picsum.photos/200/300",
+      "category": "Âm thanh",
+      "rating": 4.5,
+      "description": "Độ bền cao, bảo hành dài hạn."
+    },
+    {
+      "id": "7",
+      "name": "Logitech MX Master 3S",
+      "price": 100,
+      "sale_price": 89,
+      "status": true,
+      "image": "https://picsum.photos/200/300",
+      "category": "Phụ kiện",
+      "rating": 4.8,
+      "description": "Sản phẩm bán chạy nhất trên thị trường."
+    },
+    {
+      "id": "8",
+      "name": "Razer BlackWidow V4",
+      "price": 200,
+      "sale_price": 179,
+      "status": true,
+      "image": "https://picsum.photos/200/300",
+      "category": "Phụ kiện",
+      "rating": 4.7,
+      "description": "Phong cách thời thượng, phù hợp mọi lứa tuổi."
+    },
+    {
+      "id": "9",
+      "name": "Samsung 32-inch 4K Monitor",
+      "price": 350,
+      "sale_price": 299,
+      "status": true,
+      "image": "https://picsum.photos/200/300",
+      "category": "Màn hình",
+      "rating": 4.6,
+      "description": "Được đánh giá cao bởi người dùng trên toàn thế giới."
+    },
+    {
+      "id": "10",
+      "name": "Apple iPad Pro 12.9",
+      "price": 1100,
+      "sale_price": 999,
+      "status": true,
+      "image": "https://picsum.photos/200/300",
+      "category": "Máy tính bảng",
+      "rating": 4.8,
+      "description": "Sản phẩm chất lượng cao, đáng mua."
+    },
+    {
+      "id": "11",
+      "name": "Canon EOS R6",
+      "price": 2500,
+      "sale_price": 2299,
+      "status": true,
+      "image": "https://picsum.photos/200/300",
+      "category": "Máy ảnh",
+      "rating": 4.9,
+      "description": "Sản phẩm chất lượng cao, đáng mua."
+    },
+    {
+      "id": "12",
+      "name": "Sony Alpha A7 III",
+      "price": 2000,
+      "sale_price": 1899,
+      "status": true,
+      "image": "https://picsum.photos/200/300",
+      "category": "Máy ảnh",
+      "rating": 4.7,
+      "description": "Sản phẩm chất lượng cao, đáng mua."
+    },
+    {
+      "id": "b222",
+      "name": "abcde",
+      "price": 1000,
+      "image": "https://picsum.photos/200/300",
+      "category": "Laptop",
+      "status": false,
+      "description": "very gút"
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "title": "Clean Code",
+      "price": 25.99,
+      "published": true,
+      "imageURL": "https://cdn1.fahasa.com/media/catalog/product/b/i/bia-lap-tr_nh-c_-b1.jpg",
+      "genre": "Programming"
+    },
+    {
+      "id": "2",
+      "title": "Atomic Habits",
+      "price": 18.5,
+      "published": true,
+      "imageURL": "https://cdn0.fahasa.com/media/wysiwyg/Frame_Ncc_2025/FrameNCCT3_12__1080x1080.png",
+      "genre": "Self-help"
+    },
+    {
+      "id": 3,
+      "title": "The Pragmatic Programmer",
+      "price": 30,
+      "published": false,
+      "imageURL": "https://cdn1.fahasa.com/media/catalog/product/t/h/th_-m_nh-c_a-tu_i-trung-ni_n---b_a-1.jpg",
+      "genre": "Programming"
+    },
+    {
+      "title": "book update",
+      "price": 1000,
+      "puslisher": true,
+      "image": "https://picsum.photos/200/300",
+      "genre": "Self-help",
+      "description": "aaaaaaaaaaaaa",
+      "id": "e12b"
+    },
+    {
+      "title": "book1 update",
+      "price": 1000,
+      "pulished": true,
+      "image": "https://picsum.photos/200/300",
+      "genre": "Programming",
+      "id": "117d"
+    }
+  ]
+}

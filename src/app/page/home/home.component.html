@@ -1,0 +1,29 @@
+<h1>Danh sách sản phẩm</h1>
+<div class="container mt-4">
+  <!-- Lặp qua danh sách sản phẩm -->
+  <div *ngFor="let item of products; let i = index" class="card">
+    <img class="card-img-top" [src]="item.image" [alt]="item.name" />
+    <div class="card-body">
+      <h5 class="card-title">{{ item?.name }}</h5>
+      <p class="card-text">{{ item?.description }}</p>
+      <div class="mt-auto">
+        <a [routerLink]="['/product', item.id]"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Chi tiết
+        </a>
+        <button
+          (click)="addToCart(item)"
+          class="mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Thêm vào giỏ hàng
+        </button>
+        <button
+          (click)="removeProduct(i)"
+          class="mt-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Xóa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

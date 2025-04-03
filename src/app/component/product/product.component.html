@@ -1,0 +1,52 @@
+<h1>Họ và tên: {{name}}</h1>
+
+<h1>Tuổi: {{age}}</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="border">STT</th>
+      <th class="border">Tên sản phẩm</th>
+      <th class="border">Giá bán</th>
+      <th class="border">Trạng thái</th>
+      <th class="border">Danh mục</th>
+      <th class="border">Đánh giá</th>
+      <th class="border"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of products; track $index) {
+      <tr>
+        <td class="border">{{$index+1}}</td>
+        <td class="border">{{item.name | titlecase}}</td>
+        <td class="border">
+          @if(item.price){
+            <span>
+              {{item.price | currency:'VND'}}
+            </span>
+          }@else{
+            <span>K có giá bán</span>
+          }
+        </td>
+        <td class="border">{{renderSatus(item.inStock)}}</td>
+        <td class="border">
+          @switch (item.category) {
+            @case ('LT') {
+              <span>Lap top</span>
+            }
+            @case ('MB') {
+              <span>Điện thoại</span>
+            }
+            @default {
+              <span>Phụ kiện</span>
+            }
+          }
+        </td>
+        <td class="border">{{item.rating}}</td>
+        <td class="border">
+          <button (click)="handleDelete(item.id)" class="px-3 rounded border hover:bg-red-400">Xóa</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

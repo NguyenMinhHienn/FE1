@@ -1,0 +1,79 @@
+<div class="container mt-4">
+  <h1 class="text-2xl font-bold mb-4">Chỉnh sửa sách</h1>
+  <form [formGroup]="bookForm" (ngSubmit)="updateBook()">
+    <!-- Tên sách -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Tên sách</label>
+      <input
+        type="text"
+        formControlName="title"
+        class="w-full p-2 border border-gray-300 rounded-lg"
+        placeholder="Nhập tên sách"
+      />
+      <div *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched" class="text-red-500 text-sm">
+        <p *ngIf="bookForm.get('title')?.errors?.['required']">Tên sách là bắt buộc.</p>
+        <p *ngIf="bookForm.get('title')?.errors?.['minlength']">Tên sách phải có ít nhất 3 ký tự.</p>
+      </div>
+    </div>
+
+    <!-- Giá -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Giá</label>
+      <input
+        type="number"
+        formControlName="price"
+        class="w-full p-2 border border-gray-300 rounded-lg"
+        placeholder="Nhập giá sách"
+      />
+      <div *ngIf="bookForm.get('price')?.invalid && bookForm.get('price')?.touched" class="text-red-500 text-sm">
+        <p *ngIf="bookForm.get('price')?.errors?.['required']">Giá sách là bắt buộc.</p>
+        <p *ngIf="bookForm.get('price')?.errors?.['min']">Giá sách phải lớn hơn hoặc bằng 0.</p>
+      </div>
+    </div>
+
+    <!-- Tình trạng -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Tình trạng</label>
+      <select formControlName="pulished" class="w-full p-2 border border-gray-300 rounded-lg">
+        <option [value]="true">Còn hàng</option>
+        <option [value]="false">Hết hàng</option>
+      </select>
+    </div>
+
+    <!-- Hình ảnh -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Hình ảnh</label>
+      <input
+        type="text"
+        formControlName="image"
+        class="w-full p-2 border border-gray-300 rounded-lg"
+        placeholder="Nhập URL hình ảnh"
+      />
+      <div *ngIf="bookForm.get('image')?.invalid && bookForm.get('image')?.touched" class="text-red-500 text-sm">
+        <p *ngIf="bookForm.get('image')?.errors?.['required']">Hình ảnh là bắt buộc.</p>
+      </div>
+    </div>
+
+    <!-- Thể loại -->
+    <div class="mb-4">
+      <label class="block text-gray-700 font-medium mb-2">Thể loại</label>
+      <select formControlName="genre" class="w-full p-2 border border-gray-300 rounded-lg">
+        <option value="" disabled selected>Chọn thể loại</option>
+        <option value="Programming">Programming</option>
+        <option value="Self-help">Self-help</option>
+      </select>
+      <div *ngIf="bookForm.get('genre')?.invalid && bookForm.get('genre')?.touched" class="text-red-500 text-sm">
+        <p *ngIf="bookForm.get('genre')?.errors?.['required']">Thể loại là bắt buộc.</p>
+      </div>
+    </div>
+
+    <!-- Nút cập nhật -->
+    <button
+      type="submit"
+      [disabled]="bookForm.invalid"
+      class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+    >
+      Cập nhật sách
+    </button>
+  </form>
+</div>

@@ -1,0 +1,20 @@
+<div class="container mt-4">
+  <div *ngIf="product; else loading">
+    <h1 class="text-2xl font-bold mb-4">{{ product.name }}</h1>
+    <img
+      [src]="product.image"
+      [alt]="product.name"
+      class="w-full max-w-md mb-4 rounded shadow"
+    />
+    <p class="text-lg">{{ product.description }}</p>
+    <button
+      (click)="goBack()"
+      class="mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Quay lại
+    </button>
+  </div>
+  <ng-template #loading>
+    <p>Đang tải thông tin sản phẩm...</p>
+  </ng-template>
+</div>

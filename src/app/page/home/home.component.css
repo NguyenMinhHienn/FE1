@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cột chia đều */
+  gap: 16px; /* Khoảng cách giữa các sản phẩm */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Đảm bảo chiều cao đồng nhất */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng đổ bóng */
+  border-radius: 8px; /* Bo góc */
+  overflow: hidden;
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .mt-auto {
+  margin-top: auto; /* Đẩy nút xuống cuối */
+}
+
+h1 {
+  font-size: 3rem; /* Tăng kích thước chữ */
+  text-align: center; /* Căn giữa theo chiều ngang */
+  margin-bottom: 2rem; /* Thêm khoảng cách dưới tiêu đề */
+  font-weight: bold; /* Làm chữ đậm */
+  color: #333; /* Màu chữ */
+}

@@ -1,0 +1,59 @@
+<div class="container mt-4">
+  <h1 class="text-2xl font-bold mb-4">Danh sách sách</h1>
+  <a routerLink="/admin/book/add"
+    class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mb-4 inline-block">
+    Thêm mới
+  </a>
+  <table class="table-auto w-full border-collapse border border-gray-300">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-300 px-4 py-2">#</th>
+        <th class="border border-gray-300 px-4 py-2">Tên sách</th>
+        <th class="border border-gray-300 px-4 py-2">Trạng thái</th>
+        <th class="border border-gray-300 px-4 py-2">Giá</th>
+        <th class="border border-gray-300 px-4 py-2">Hình ảnh</th>
+        <th class="border border-gray-300 px-4 py-2">Thể loại</th>
+        <th class="border border-gray-300 px-4 py-2">Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books; let i = index">
+        <!-- Số thứ tự -->
+        <td class="border border-gray-300 px-4 py-2 text-center">{{ i + 1 }}</td>
+
+        <!-- Tên sách -->
+        <td class="border border-gray-300 px-4 py-2">{{ book.title }}</td>
+
+        <!-- Trạng thái -->
+        <td class="border border-gray-300 px-4 py-2 text-center">
+          <span [ngClass]="{ 'text-green-500': book.puslisher, 'text-red-500': !book.puslisher }">
+            {{ book.puslisher ? 'Còn hàng' : 'Hết hàng' }}
+          </span>
+        </td>
+
+        <!-- Giá -->
+        <td class="border border-gray-300 px-4 py-2">{{ book.price | currency:'VND' }}</td>
+
+        <!-- Hình ảnh -->
+        <td class="border border-gray-300 px-4 py-2">
+          <img [src]="book.image" alt="{{ book.title }}" class="w-16 h-16 object-cover">
+        </td>
+
+        <!-- Thể loại -->
+        <td class="border border-gray-300 px-4 py-2">{{ book.genre }}</td>
+
+        <!-- Hành động -->
+        <td class="border border-gray-300 px-4 py-2 text-center">
+          <a [routerLink]="['/admin/book/edit/', book.id]"
+            class="px-4 py-2 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75 mr-2">
+            Sửa
+          </a>
+          <button (click)="deleteBook(book.id)"
+            class="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
+            Xóa
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

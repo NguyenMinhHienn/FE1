@@ -1,0 +1,65 @@
+<div class="container mt-4">
+  <h1 class="text-2xl font-bold mb-4">Danh sách sản phẩm</h1>
+  <a routerLink="/admin/product/add" 
+    class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:cursor-pointer hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mb-4 inline-block">
+    Thêm mới
+  </a>
+  <table class="table-auto w-full border-collapse border border-gray-300">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-300 px-4 py-2">#</th>
+        <th class="border border-gray-300 px-4 py-2">Tên sản phẩm</th>
+        <th class="border border-gray-300 px-4 py-2">Hình ảnh</th>
+        <th class="border border-gray-300 px-4 py-2">Danh mục</th>
+        <th class="border border-gray-300 px-4 py-2">Giá</th>
+        <th class="border border-gray-300 px-4 py-2">Trạng thái</th>
+        <th class="border border-gray-300 px-4 py-2">Mô tả</th>
+        <th class="border border-gray-300 px-4 py-2">Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of paginatedProducts(); let i = index">
+        <td class="border border-gray-300 px-4 py-2 text-center">{{ i + 1 + (currentPage - 1) * itemsPerPage }}</td>
+        <td class="border border-gray-300 px-4 py-2">{{ product.name }}</td>
+        <td class="border border-gray-300 px-4 py-2">
+          <img [src]="product.image" alt="{{ product.name }}" class="w-16 h-16 object-cover">
+        </td>
+        <td class="border border-gray-300 px-4 py-2">{{ product.category }}</td>
+        <td class="border border-gray-300 px-4 py-2">{{ product.price | currency }}</td>
+        <td class="border border-gray-300 px-4 py-2">
+          <span [ngClass]="{'text-green-500': product.status, 'text-red-500': !product.status}">{{ product.status ? 'Còn hàng' : 'Hết hàng' }}</span>
+        </td>
+        <td class="border border-gray-300 px-4 py-2">{{ product.description }}</td>
+        <td class="border border-gray-300 px-4 py-2 text-center">
+          <a
+            [routerLink]="['/admin/product/edit/', product.id]"
+            class="px-4 py-2 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75 mr-2">
+            Sửa
+          </a>
+          <button
+            (click)="deleteProduct(product.id)"
+            class="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
+            Xóa
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Thanh điều hướng phân trang -->
+  <div class="flex justify-center mt-4 space-x-2">
+    <button 
+      (click)="prevPage()" 
+      [disabled]="currentPage === 1" 
+      class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 disabled:opacity-50">
+      Trang trước
+    </button>
+    <span class="px-4 py-2">Trang {{ currentPage }} / {{ totalPages() }}</span>
+    <button 
+      (click)="nextPage()" 
+      [disabled]="currentPage >= totalPages()" 
+      class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 disabled:opacity-50">
+      Trang sau
+    </button>
+  </div>
+</div>
